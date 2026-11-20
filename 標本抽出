@@ -1,0 +1,40 @@
+function runSample(n){
+
+let total=0;
+
+let heights=[];
+
+for(let i=0;i<n;i++){
+
+let p=createPerson();
+
+total+=p.height;
+
+heights.push(p.height);
+
+}
+
+let mean=total/n;
+
+let error=
+Math.abs(
+mean-trueMean
+);
+
+document
+.getElementById("result")
+.innerHTML=
+
+`
+標本平均:
+${mean.toFixed(2)}cm
+
+<br>
+
+母平均との差:
+${error.toFixed(2)}cm
+`;
+
+drawHistogram(heights);
+
+}
